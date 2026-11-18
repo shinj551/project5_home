@@ -1,0 +1,319 @@
+@font-face {
+  font-family: 'Fraunces';
+  src: url('assets/fraunces-italic-latin.woff2') format('woff2');
+  font-weight: 600 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('assets/dm-sans-latin.woff2') format('woff2');
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 1100px;
+  min-height: 100vh;
+  background-color: #f5efdf;
+  background-image: url('assets/websitebg.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  color: #382b25;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 5px;
+}
+
+a:hover {
+  color: #99442e;
+}
+
+a:focus-visible {
+  outline: 2px solid #99442e;
+  outline-offset: 5px;
+}
+
+.site-header,
+main {
+  max-width: 1440px;
+  margin: auto;
+  padding-left: 64px;
+  padding-right: 64px;
+}
+
+.site-header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.zine-name,
+h1,
+h2,
+h3,
+.object-detail strong {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.zine-name {
+  display: inline-block;
+  font-size: 24px;
+  line-height: 1.05;
+  letter-spacing: -.8px;
+  text-decoration: none;
+}
+
+.page-intro {
+  padding: 30px 0 40px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 98px;
+  line-height: 1.08;
+  letter-spacing: -4px;
+}
+
+h1 em {
+  font-style: inherit;
+  color: #99442e;
+}
+
+h2 {
+  margin: 17px 0 0;
+  font-size: 51px;
+  line-height: 1.06;
+  letter-spacing: -1.8px;
+}
+
+h3 {
+  margin: 0 0 13px;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+p,
+figure {
+  margin: 0;
+}
+
+.festival {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr);
+  gap: 65px;
+  align-items: start;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.scene {
+  position: relative;
+}
+
+.scene-background {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.art-piece {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.art-piece img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: filter .18s;
+}
+
+.moon-layer {
+  clip-path: polygon(50% 4%, 95% 4%, 95% 64%, 50% 64%);
+}
+
+.cake-layer {
+  clip-path: polygon(64% 43%, 100% 43%, 100% 85%, 64% 85%);
+}
+
+.tea-layer {
+  clip-path: polygon(18% 55%, 59% 55%, 59% 89%, 18% 89%);
+}
+
+.art-piece:hover img,
+.art-piece:focus-visible img {
+  filter: drop-shadow(0 0 2px white) drop-shadow(0 0 5px white) drop-shadow(0 0 9px rgba(255, 255, 255, .85));
+}
+
+.art-piece:focus-visible {
+  outline: none;
+}
+
+.interaction-hint {
+  margin-top: 12px;
+  color: #716151;
+  font-size: 11px;
+}
+
+.object-detail {
+  margin-top: 18px;
+  padding-left: 48px;
+  min-height: 50px;
+  background-image: url('assets/lightbulb.png');
+  background-size: 34px auto;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+.object-detail strong {
+  font-size: 20px;
+}
+
+.object-detail p {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.festival-copy {
+  padding: 32px;
+  background-image: url('assets/contentbg.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+}
+
+.original {
+  margin-top: 9px;
+  color: #716151;
+  font-size: 12px;
+}
+
+.facts {
+  margin: 26px 0 24px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #bcb09b;
+}
+
+.facts>div {
+  display: grid;
+  grid-template-columns: 57px 1fr;
+  gap: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.facts dt {
+  font-size: 9px;
+  letter-spacing: 1.3px;
+  color: #716151;
+}
+
+.facts dd {
+  margin: 0;
+  font-size: 12px;
+}
+
+.thanksgiving,
+.halloween {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr);
+}
+
+.cornucopia-layer {
+  clip-path: polygon(60% 0%, 100% 0%, 100% 46%, 60% 46%);
+}
+
+.meal-layer {
+  clip-path: polygon(5% 14%, 57% 14%, 57% 60%, 79% 60%, 79% 84%, 48% 84%, 48% 65%, 37% 65%, 37% 81%, 12% 81%);
+}
+
+.turkey-layer {
+  clip-path: polygon(25% 49%, 40% 34%, 45% 29%, 62% 27%, 69% 33%, 74% 44%, 75% 57%, 61% 70%, 40% 75%, 25% 65%);
+}
+
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  font-size: 12px;
+}
+
+.page-navigation span {
+  color: #716151;
+}
+
+.separation-line {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.costume-layer {
+  clip-path: polygon(70% 0%, 100% 0%, 100% 56%, 78% 56%, 78% 64%, 56% 64%, 56% 38%, 70% 38%);
+}
+
+.candy-layer {
+  clip-path: polygon(37% 0%, 65% 0%, 65% 30%, 58% 35%, 58% 67%, 24% 70%, 24% 29%, 37% 21%);
+}
+
+.lantern-layer {
+  clip-path: polygon(3% 57%, 33% 57%, 33% 66%, 54% 66%, 54% 89%, 3% 89%);
+}
+
+.marigold-layer {
+  clip-path: polygon(2% 3%, 39% 3%, 41% 60%, 2% 60%);
+}
+
+.bread-layer {
+  clip-path: polygon(12% 66%, 42% 66%, 42% 94%, 12% 94%);
+}
+
+.ofrenda-layer {
+  clip-path: polygon(50% 8%, 96% 8%, 100% 48%, 100% 100%, 30% 100%, 30% 65%, 34% 58%, 33% 33%, 50% 30%);
+}
+
+
+.home-link{
+  color: #382b25;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.home-link:hover{
+  text-decoration: underline;
+}
