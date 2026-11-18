@@ -1,0 +1,329 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page-two{
+    background-color: #f5ecdb;
+    background-image: url(imgaes/background5.jpg);
+
+    
+    background-repeat: repeat;
+
+    color: #3b2921;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.page-two img{
+    max-width: 100%;
+}
+
+
+
+.catalogue-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 6%;
+    border-bottom: 1px solid #c9b393;
+    background: #ddc8a8;
+}
+
+.catalogue-nav a{
+    color: #3b2921;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.catalogue-nav a:hover{
+    color: #a36b42;
+    border-bottom: 1px solid #a36b42;
+}
+
+.catalogue-nav span{
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.autumn-strip{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 5%;
+    overflow: hidden;
+}
+
+.autumn-strip img{
+    width: 55px;
+    height: 65px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.autumn-strip img:nth-child(odd){
+    transform: rotate(-20deg);
+}
+
+
+
+.autumn-strip img:hover{
+    transform: rotate(0deg) scale(1.2);
+}
+
+.catalogue-cover{
+    min-height: 100vh;
+    padding: 90px 10%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.catalogue-label{
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: #986451;
+}
+
+.catalogue-cover h1{
+    font-size: clamp(65px, 8vw, 115px);
+    font-weight: normal;
+    line-height: 0.95;
+    margin: 30px 0;
+}
+
+.catalogue-cover h1 em{
+    font-weight: normal;
+}
+
+.cover-subtitle{
+    font-size: 22px;
+    font-style: italic;
+    color: #80674d;
+}
+
+.cover-description{
+    max-width: 850px;
+    margin: 50px auto 0;
+}
+
+.cover-description p{
+    font-size: 23px;
+    line-height: 1.5;
+    color: #705943;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.catalogue-art{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 10%;
+
+    min-height: 650px;
+    padding: 110px 9%;
+}
+
+
+
+.painting-frame{
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1.4;
+    margin: 0 auto;
+}
+
+.painting-frame .painting{
+   position: absolute;
+   width: 72%;
+   height: 65%;
+   top: 17.5%;
+   left: 14%;
+
+   object-fit: cover;
+   z-index: 1;
+}
+
+.painting-frame .frame{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.frame-type2 .frame{
+    width: 130%;
+    height: 130%;
+    top: -15%;
+    left: 0%;
+}
+
+.frame-type3{
+    aspect-ratio: 0.72;
+}
+
+.frame-type3 .painting{
+    width: 67%;
+    height: 75%;
+    top: 12.5%;
+    left: 16.5%;
+
+    object-fit: contain;
+}
+
+
+.catalogue-image span{
+    display: block;
+    margin-top: 20px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #96795b;
+}
+
+.catalogue-text h2{
+    font-size: clamp(45px, 5vw, 75px);
+    font-weight: normal;
+    line-height: 1.05;
+    margin: 20px 0 12px;
+}
+
+.catalogue-artist{
+    font-size: 24px;
+    font-style: italic;
+    color: #96714d;
+}
+
+.catalogue-line{
+    width: 75px;
+    height: 1px;
+    background: #b89b70;
+    margin: 35px 0;
+}
+
+.catalogue-text h3{
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.catalogue-text p:not(.catalogue-label):not(.catalogue-artist){
+    font-size: 19px;
+    line-height: 1.9;
+    color: #705943;
+    margin-bottom: 20px;
+}
+
+.catalogue-ending{
+    padding: 130px 25px;
+    text-align: center;
+    background: rgba(224,204,174,0.6);
+}
+
+.ending-leaf{
+    display: block;
+    width: 65px;
+    margin: 0 auto 30px;
+}
+
+.catalogue-ending h2{
+    font-size: clamp(55px, 7vw, 95px);
+    font-weight: normal;
+    line-height: 1;
+    margin: 30px 0;
+}
+
+.catalogue-ending p:not(.catalogue-label){
+    max-width: 500px;
+    margin: 0 auto 30px;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.ending-objects{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 35px 0;
+}
+
+.ending-objects img{
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+.back-button{
+    display: inline-block;
+    padding: 15px 30px;
+    border: 1px solid #8d6b48;
+    color: #3b2921;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.back-button:hover{
+    background: #3b2921;
+    color: #f5ecdb;
+}
+
+.catalogue-footer{
+    text-align: center;
+    padding: 30px;
+    background: #ddc8a8;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+    .catalogue-nav{
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .catalogue-nav span{
+        font-size: 11px;
+    }
+
+    .autumn-strip{
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .autumn-strip img{
+        width: 36px;
+        height: 45px;
+    }
+
+    .catalogue-cover{
+        min-height: auto;
+        padding: 90px 7%;
+    }
+
+    .catalogue-art{
+        grid-template-columns: 1fr;
+        padding: 80px 7%;
+        gap: 45px;
+    }
+
+    .catalogue-text h2{
+        font-size: 50px;
+    }
+}

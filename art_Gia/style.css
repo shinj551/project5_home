@@ -1,0 +1,358 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #53121b;
+}
+
+
+.gallery{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: 850px;
+
+    background-image: url(imgaes/sub-back.jpg), url(imgaes/background6.jpg);
+    background-size: 100% 240px, 100% 100%;
+
+    background-position: center bottom, center center;
+
+    background-repeat: no-repeat, no-repeat;
+    overflow: hidden;
+}
+
+.art{
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.art:hover{
+    z-index: 10;
+}
+
+
+.art1{
+    width: 23%;
+    top: 10%;
+    left: 5%;
+}
+
+.art2{
+    width: 31%;
+    top: 43%;
+    left: 5%;
+}
+
+.art3{
+    width: 25%;
+    top: 15%;
+    right: 5%;
+}
+
+.art4{
+    width: 18%;
+    top: 22%;
+    left: 41%;
+}
+
+.art5{
+    width: 31%;
+    top: 44%;
+    right: 5%;
+}
+
+/*frame and painting*/
+
+.artwork{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.4;
+    transition: transform 0.7s ease, filter 0.7s ease;
+}
+
+.art4 .artwork{
+    aspect-ratio: 0.72;
+}
+
+.painting{
+    position: absolute;
+    width: 72%;
+    height: 65%;
+    top: 17.5%;
+    left: 14%;
+
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+.art4 .painting{
+    width: 67%;
+    height: 75%;
+    top: 12.5%;
+    left: 16.5%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.frame{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    object-fit: contain;
+    z-index: 2;
+    pointer-events: none;
+
+    filter: drop-shadow(6px 10px 7px rgba(0, 0, 0, 0.45));
+    transition: filter 0.4s ease;
+}
+
+.art:hover .frame{
+    filter: drop-shadow(9px 14px 10px rgba(0, 0, 0, 0.55));
+}
+
+.art2 .frame,
+.art5 .frame{
+    width: 130%;
+    height: 130%;
+    top: -15%;
+    left: -15%;  
+}
+
+.art:hover .artwork{
+    transform: scale(1.04);
+    filter: drop-shadow(0 0 12px rgba(244, 193, 103, 0.35));
+}
+
+
+.leaves{
+    position: absolute;
+    top: -15%;
+    left: 0;
+    width: 100%;
+    height: 150%;
+
+    pointer-events: none;
+    z-index: 20;
+}
+
+.leaves img{
+    position: absolute;
+    width: 42px;
+    height: auto;
+    opacity: 0;
+}
+
+
+.leaves img:nth-child(1){
+    left: 10%;
+    top: 0;
+}
+
+.leaves img:nth-child(2){
+    left: 55%;
+    top: -5%;
+    width: 35px;
+}
+
+.leaves img:nth-child(3){
+    left: 80%;
+    top: 5%;
+    width: 50px;
+}
+
+.art:hover .leaves img:nth-child(1){
+    animation: leafFall 5s ease-in-out 0s infinite;
+}
+
+.art:hover .leaves img:nth-child(2){
+    animation: leafFall 6s ease-in-out 0.4s infinite;
+}
+
+.art:hover .leaves img:nth-child(3){
+    animation: leafFall 5.5s ease-in-out 0.8s infinite;
+}
+
+
+@keyframes leafFall{
+    0%{
+        opacity: 0;
+        transform: translate(0, -30px) rotate(-15deg);
+    }
+
+
+    15%{    
+        opacity: 1;
+    }
+
+    40%{
+        transform: translate(20px, 70px) rotate(30deg);
+    }
+
+    70%{
+        transform: translate(-15px, 150px) rotate(-20deg);
+        opacity: 0.9;
+    }
+
+    100%{
+        opacity: 0;
+        transform: translate(25px, 250px) rotate(80deg);
+    }
+}
+
+
+.art-info{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    width: 260px;
+    max-height: 85vw;
+    padding: 16px 18px;
+
+    background-color: #f5ecdb;
+    color: #34231d;
+    border: 1px solid #b5955c;
+
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(-50%, 12px);
+    transition: 
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s ease;
+
+        pointer-events: none;
+        z-index: 6;
+}
+
+
+.art:hover .art-info{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    transition-delay: 0.35s;
+}
+
+
+.art-info h2{
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 1.25;
+    margin-bottom: 7px;
+}
+
+
+.art-info .artist{
+    font-size: 12px;
+    font-style: italic;
+    color: #82633c;
+    margin-bottom: 10px;
+}
+
+.art2 .art-info,
+.art5 .art-info{
+    top: 100%;
+    bottom: auto;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+
+@media(max-width: 700px) {
+    body{
+        overflow-x: hidden;
+    }
+    .gallery{
+        width: 1000px;
+        height: 850px;
+        min-height: 0;
+
+        transform: scale(calc(100vw / 1000px));
+        transform-origin: top left;
+
+        background-size: 100% 240px, 100% 100%;
+    }
+
+    .page-navigation{
+        bottom: 30px;
+    }
+
+    .page-navigation a{
+        padding: 12px 18px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .art:hover .leaves img{
+        animation: none;
+    }
+
+    .artwork,
+    .art-info{
+        transition: none;
+    }
+}
+
+
+.page-navigation{
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+
+    text-align: center;
+    padding: 0;
+    background: transparent;
+
+}
+
+.page-navigation a{
+    display: inline-block;
+    padding: 16px 30px;
+    border: 1px solid #c9a36c;
+    color: #f5ecdb;
+
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.page-navigation a:hover{
+    background: #c9a36c;
+    color: #53121b;
+}
+
+
+.home-link{
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    z-index: 100;
+
+    color: #f5ecdb;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.home-link:hover{
+    text-decoration: underline;
+}
