@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@1,9..144,600,20,1&display=swap');
+.flag-banner {
+  width: 1000px;
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
+  transform: translateY(60px);
+  
+}
+:root {
+  --paper: #f7eee2;
+  --ink: #30251f;
+  --brown: #98533b;
+  --rust: #b65e3d;
+  --line: #cdbdad;
+  --muted: #786c62;
+  --teal: #719c91;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #e8dfd4;
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.65;
+}
+
+.zine {
+  width: min(1180px, calc(100% - 40px));
+  margin: 34px auto;
+  padding: 34px 42px 22px;
+  background: var(--paper);
+  box-shadow: 0 12px 40px rgba(49, 35, 25, .12);
+}
+
+.masthead {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0 18px;
+  margin-bottom: 28px;
+}
+
+.eyebrow, .section-label, .gallery-instruction, .facts span, .credits > span {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  color: var(--muted);
+}
+
+.masthead .eyebrow { margin: 0 0 5px; }
+
+h1, h2, h3, blockquote {
+  font-family: "Fraunces", Georgia, serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(44px, 7vw, 82px);
+  line-height: 1.02;
+  letter-spacing: -.055em;
+  font-weight: 600;
+  font-style: italic;
+}
+
+h1 span, .article-title span { color: var(--rust); }
+
+.dek {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.spread {
+  display: grid;
+  grid-template-columns: 1.04fr .96fr;
+  gap: clamp(28px, 5vw, 58px);
+}
+
+.page { min-width: 0; }
+
+.hero-image {
+  position: relative;
+  height: 330px;
+  background: #262522;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-note {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  color: white;
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 5px #000;
+}
+
+.intro-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: end;
+  padding: 22px 0 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.intro-row .eyebrow { margin: 0 0 7px; }
+
+.intro-row h2 {
+  font-size: clamp(25px, 3vw, 37px);
+  line-height: 1.03;
+  font-style: italic;
+  margin: 0;
+}
+
+.intro-copy {
+  font-size: 11px;
+  line-height: 1.75;
+  margin: 0;
+  color: #51463e;
+}
+
+.interactive-gallery { padding-top: 15px; }
+
+.gallery-instruction { margin: 0 0 10px; }
+
+.interactive-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.gallery-instruction { grid-column: 1 / -1; }
+
+.hover-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 150px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: #ded0bd;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+.hover-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .45s ease, filter .45s ease;
+}
+
+.description {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  padding: 17px;
+  color: #fff8ed;
+  background: rgba(45, 34, 28, .88);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.description strong {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.description span {
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.hover-card:hover .description,
+.hover-card:focus-visible .description,
+.hover-card:focus-within .description {
+  opacity: 1;
+}
+
+.hover-card:hover img { transform: scale(1.06); }
+
+.hover-card:focus-visible {
+  outline: 3px solid var(--rust);
+  outline-offset: 3px;
+}
+
+.section-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--line);
+  padding: 5px 0 13px;
+}
+
+.article-title {
+  margin: 22px 0 6px;
+  font-size: clamp(34px, 4.2vw, 52px);
+  line-height: 1.03;
+  letter-spacing: -.035em;
+  font-style: italic;
+}
+
+.subtitle {
+  color: var(--brown);
+  font-size: 12px;
+  margin: 10px 0 20px;
+}
+
+.facts {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 11px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 21px;
+}
+
+.facts span { font-size: 8px; }
+
+.facts p {
+  font-size: 10px;
+  line-height: 1.5;
+  margin: 3px 0 0;
+}
+
+.story-block { margin: 0 0 17px; }
+
+.story-block h3 {
+  font-size: 19px;
+  font-style: italic;
+  margin: 0 0 5px;
+  line-height: 1.2;
+}
+
+.story-block p {
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 0;
+  color: #453b34;
+}
+
+blockquote {
+  border-left: 3px solid var(--rust);
+  padding: 2px 0 2px 15px;
+  margin: 20px 0;
+  font-size: 21px;
+  line-height: 1.3;
+  font-style: italic;
+  color: var(--brown);
+}
+
+.closing-note {
+  font-size: 11px;
+  line-height: 1.75;
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+.credits {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.credits p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  margin-top: 27px;
+  padding-top: 11px;
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+/* Smaller screens: stack the two pages vertically. */
+@media (max-width: 760px) {
+  .zine {
+    width: min(100% - 20px, 620px);
+    margin: 10px auto;
+    padding: 22px 20px;
+  }
+
+  .spread { grid-template-columns: 1fr; }
+  .hero-image { height: 280px; }
+  .page-reading { border-top: 1px solid var(--line); padding-top: 25px; }
+}
+
+@media (max-width: 420px) {
+  .intro-row { grid-template-columns: 1fr; }
+  .hero-image { height: 220px; }
+  .hover-card { height: 125px; }
+  .description { padding: 10px; }
+  .description strong { font-size: 17px; }
+  .description span { font-size: 10px; }
+  .page-footer { font-size: 7px; }
+}
+
+/* Touchscreen users can tap a card to focus it and reveal its caption. */
+@media (hover: none) {
+  .hover-card:focus .description { opacity: 1; }
+}
+
+
+/* Three-page layout and Coco-inspired decorative details */
+.spread {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 850px;
+  padding: 18px 20px 16px;
+  background: rgba(255, 251, 244, .48);
+  border: 1px solid rgba(205, 189, 173, .72);
+  overflow: hidden;
+}
+
+.coco-trim {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 12px;
+  min-height: 28px;
+  color: var(--rust);
+  border-top: 1px solid rgba(182, 94, 61, .42);
+  border-bottom: 1px solid rgba(182, 94, 61, .42);
+  background:
+    repeating-linear-gradient(135deg, rgba(216, 138, 50, .10) 0 7px, transparent 7px 14px);
+  letter-spacing: .3em;
+}
+
+.coco-trim span {
+  font-size: 19px;
+  line-height: 1;
+  color: #d58a32;
+}
+
+.coco-trim i {
+  font-size: 13px;
+  font-style: normal;
+  color: var(--teal);
+}
+
+.trim-top { margin: 0 0 17px; }
+.trim-bottom { margin: auto 0 0; padding-top: 5px; padding-bottom: 5px; }
+
+.page-visual .hero-image { height: 300px; }
+.page-visual .hover-card { height: 132px; }
+
+.page-symbols .page-kicker { margin: 22px 0 5px; }
+.page-symbols .article-title { margin-top: 8px; }
+.page-symbols .subtitle { margin-bottom: 24px; }
+
+.symbol-feature {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 15px;
+  align-items: start;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.symbol-mark {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 27px;
+  color: #fff8ed;
+  background: var(--rust);
+}
+
+.papel-mark { background: #719c91; }
+.guitar-mark { background: #98533b; }
+.butterfly-mark { background: #d58a32; }
+
+.symbol-feature h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.symbol-feature p {
+  margin: 0;
+  color: #453b34;
+  font-size: 10.5px;
+  line-height: 1.7;
+}
+
+.final-quote {
+  margin-top: 18px;
+  margin-bottom: 14px;
+  font-size: 20px;
+}
+
+.page-reading .credits { margin-bottom: 18px; }
+
+@media (max-width: 900px) {
+  .spread { grid-template-columns: 1fr; }
+  .page { min-height: 0; }
+  .page-reading, .page-symbols {
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 420px) {
+  .page { padding: 14px 12px; }
+  .symbol-feature { grid-template-columns: 46px 1fr; gap: 10px; }
+  .symbol-mark { width: 42px; height: 42px; font-size: 22px; }
+}
+
+
+/* Page three: two-column feature layout for skulls, food, and the parade. */
+.page-symbols {
+  grid-column: 1 / -1;
+  min-height: 700px;
+}
+
+.traditions-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(22px, 4vw, 46px);
+  align-items: start;
+  flex: 1;
+}
+
+.traditions-copy { min-width: 0; }
+.page-symbols .page-kicker { margin: 15px 0 5px; }
+.page-symbols .article-title { margin-top: 7px; }
+.page-symbols .subtitle { margin-bottom: 18px; }
+.page-symbols .story-block { margin-bottom: 15px; }
+.page-symbols .story-block h3 { font-size: 19px; }
+.page-symbols .story-block p { font-size: 11px; line-height: 1.72; }
+.page-symbols .final-quote { margin: 17px 0 12px; font-size: 20px; }
+.page-symbols .closing-note { margin-bottom: 16px; }
+
+.traditions-gallery {
+  padding-top: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  gap: 12px;
+}
+
+.traditions-gallery .hover-card { height: 220px; }
+.traditions-gallery .description { padding: 14px; }
+.traditions-gallery .description strong { font-size: 19px; }
+.traditions-gallery .description span { font-size: 10px; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .page-symbols { grid-column: auto; }
+  .traditions-layout { grid-template-columns: 1fr; }
+  .traditions-gallery { padding-top: 4px; }
+  .traditions-gallery .hover-card { height: 190px; }
+}
+
+@media (max-width: 520px) {
+  .traditions-gallery { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .traditions-gallery .hover-card { height: 145px; }
+  .traditions-gallery .description { padding: 9px; }
+  .traditions-gallery .description strong { font-size: 16px; }
+  .traditions-gallery .description span { font-size: 9px; }
+}
+
+
+.home-link{
+  display: block;
+  text-align: right;
+  
+  color: #382b25;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.home-link:hover{
+  text-decoration: underline;
+}
